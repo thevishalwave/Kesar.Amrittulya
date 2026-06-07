@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keshar Admin Dashboard</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <section class="login-panel" id="loginPanel">
+      <div class="admin-brand">
+        <span class="brand-word">केशर</span>
+        <span class="brand-sub">अमृततुल्य गुड़ की चाय</span>
+      </div>
+      <h1>Admin Login</h1>
+      <form id="loginForm">
+        <label>Username<input name="username" autocomplete="username" required></label>
+        <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+        <button class="btn primary" type="submit">Login</button>
+        <p class="form-status" role="status"></p>
+      </form>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <div class="dashboard-top">
+        <div>
+          <p class="eyebrow">Keshar CMS</p>
+          <h1>Admin Dashboard</h1>
+        </div>
+        <div class="admin-actions">
+          <a class="btn ghost" href="index.html">View Website</a>
+          <button class="btn danger" id="logoutBtn" type="button">Logout</button>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <form class="admin-card" id="contentForm">
+          <h2>Editable Website Content</h2>
+          <label>SEO Title<input name="seoTitle"></label>
+          <label>Meta Description<textarea name="metaDescription" rows="3"></textarea></label>
+          <label>Phone Number<input name="phone"></label>
+          <label>WhatsApp Number<input name="whatsapp"></label>
+          <label>Email<input name="email"></label>
+          <label>Address<input name="address"></label>
+          <label>Instagram<input name="instagram"></label>
+          <label>Facebook<input name="facebook"></label>
+          <label>YouTube<input name="youtube"></label>
+          <label>Hero Headline<input name="heroHeadline"></label>
+          <button class="btn primary" type="submit">Save Content</button>
+          <p class="form-status" role="status"></p>
+        </form>
+
+        <section class="admin-card">
+          <h2>Official Statistics</h2>
+          <div class="metric-editor">
+            <label>Experience<input data-setting="experience" value="11+"></label>
+            <label>Outlets<input data-setting="outlets" value="380+"></label>
+            <label>States<input data-setting="states" value="12+"></label>
+          </div>
+          <button class="btn ghost" id="saveStats" type="button">Save Stats</button>
+        </section>
+
+        <section class="admin-card lead-card">
+          <div class="lead-head">
+            <h2>Franchise Leads</h2>
+            <input id="leadSearch" aria-label="Search leads">
+          </div>
+          <div class="lead-actions">
+            <button class="btn ghost" id="exportCsv" type="button">Export CSV</button>
+            <button class="btn ghost" id="exportExcel" type="button">Export Excel</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Name</th><th>Phone</th><th>City</th><th>State</th><th>Date</th><th></th></tr></thead>
+              <tbody id="leadTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="admin.js"></script>
+</body>
+</html>
